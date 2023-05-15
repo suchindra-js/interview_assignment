@@ -18,9 +18,6 @@ export default function Navbar() {
                 width={30}
                 height={30}
               />
-              <span className="self-center text-2xl font-semibold whitespace-nowrap text-white ">
-                AIA
-              </span>
             </a>
             <div className="md:hidden">
               <button
