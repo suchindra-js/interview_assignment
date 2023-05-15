@@ -40,59 +40,55 @@ export default function FilterDropdown({ filter, setFilter }: Props) {
             <div className="py-1">
               <Menu.Item>
                 {({ active }) => (
-                  <a
+                  <div
                     onClick={() => setFilter(Filter.ALL)}
-                    href="#"
                     className={classNames(
                       active ? "bg-gray-100 text-gray-900" : "text-gray-700",
                       "block px-4 py-2 text-sm"
                     )}
                   >
                     All
-                  </a>
+                  </div>
                 )}
               </Menu.Item>
               <Menu.Item>
                 {({ active }) => (
-                  <a
+                  <div
                     onClick={() => setFilter(Filter.BABY)}
-                    href="#"
                     className={classNames(
                       active ? "bg-gray-100 text-gray-900" : "text-gray-700",
                       "block px-4 py-2 text-sm"
                     )}
                   >
                     20 and below
-                  </a>
+                  </div>
                 )}
               </Menu.Item>
               <Menu.Item>
                 {({ active }) => (
-                  <a
+                  <div
                     onClick={() => setFilter(Filter.ADULT)}
-                    href="#"
                     className={classNames(
                       active ? "bg-gray-100 text-gray-900" : "text-gray-700",
                       "block px-4 py-2 text-sm"
                     )}
                   >
                     21 and below
-                  </a>
+                  </div>
                 )}
               </Menu.Item>
 
               <Menu.Item>
                 {({ active }) => (
-                  <a
+                  <div
                     onClick={() => setFilter(Filter.OLD)}
-                    href="#"
                     className={classNames(
                       active ? "bg-gray-100 text-gray-900" : "text-gray-700",
                       "block px-4 py-2 text-sm"
                     )}
                   >
                     40 and above
-                  </a>
+                  </div>
                 )}
               </Menu.Item>
             </div>
