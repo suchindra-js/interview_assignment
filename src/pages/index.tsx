@@ -7,6 +7,7 @@ import { Filter, User } from "@/common";
 import { useEffect, useState } from "react";
 import DateConverter from "@/components/DateConverter";
 import Spinner from "@/components/Spinner";
+import Head from "next/head";
 
 export default function Home() {
   const [filter, setFilter] = useState<Filter>(Filter.ALL);
@@ -49,30 +50,36 @@ export default function Home() {
   };
 
   return (
-    <main>
-      <Navbar />
-      <header>
-        <div className="flex justify-center items-center bg-[#faf9f4] py-5">
-          <h1 className="text-2xl font-bold text-[#574345]">
-            DISTRICT MANAGER
-          </h1>
-        </div>
-      </header>
-      <div className="lg:mx-[15vw]">
-        <section className="mt-12">
-          <FilterDropdown filter={filter} setFilter={setFilter} />
-        </section>
-        <hr className="my-8 h-0.5 border-t-0 bg-[#e7e7e7] opacity-100 " />
-        <section>
-          <div className="grid lg:grid-cols-3 gap-4">
-            {isLoading ? <Spinner /> : filteredUsersByAge()}
+    <>
+      <Head>
+        <title>AIA</title>
+        <link rel="shortcut icon" href="/assets/logo.png" />
+      </Head>
+      <main>
+        <Navbar />
+        <header>
+          <div className="flex justify-center items-center bg-[#faf9f4] py-5">
+            <h1 className="text-2xl font-bold text-[#574345]">
+              DISTRICT MANAGER
+            </h1>
           </div>
-        </section>
-        <hr className="my-12 h-0.5 border-t-0 bg-[#e7e7e7] opacity-100 " />
-        <section className="mb-10">
-          <DateConverter />
-        </section>
-      </div>
-    </main>
+        </header>
+        <div className="lg:mx-[15vw]">
+          <section className="mt-12">
+            <FilterDropdown filter={filter} setFilter={setFilter} />
+          </section>
+          <hr className="my-8 h-0.5 border-t-0 bg-[#e7e7e7] opacity-100 " />
+          <section>
+            <div className="grid lg:grid-cols-3 gap-4">
+              {isLoading ? <Spinner /> : filteredUsersByAge()}
+            </div>
+          </section>
+          <hr className="my-12 h-0.5 border-t-0 bg-[#e7e7e7] opacity-100 " />
+          <section className="mb-10">
+            <DateConverter />
+          </section>
+        </div>
+      </main>
+    </>
   );
 }
